@@ -1,9 +1,10 @@
-#include<SFML/Graphics.hpp>
+
 #include"Bat.h"
 
 Bat::Bat(float startX, float startY) :batPosition(startX, startY)
 {
-	batShape.setSize(sf::Vector2f(50,5));
+	batShape.setSize(sf::Vector2f(100,5));
+
 	batShape.setPosition(batPosition);
 }
 

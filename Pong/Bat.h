@@ -3,18 +3,32 @@
 using namespace sf;
 
 class Bat {
+
 	Vector2f batPosition;
+
 	RectangleShape batShape;
-	float batSpeed;
+	
+	float batSpeed=100.f;
+	
 	bool batMovingRight=false;
+	
 	bool batMovingLeft = false;
+
 public:
+	
 	Bat(float startX, float startY);
+	
 	FloatRect getPosition();
+	
 	RectangleShape getShape();
+	
 	void moveLeft();
+	
 	void moveRight();
+	
 	void stopLeft();
+	
 	void stopRight();
+	
 	void update(Time dt);
 };
