@@ -1,8 +1,47 @@
 #include<SFML/Graphics.hpp>
 #include"Bat.h"
-int main()
-{
-	sf::RenderWindow window(sf::VideoMode(640,320),"Pong");
 
-	return 0;
+Bat::Bat(float startX, float startY) :batPosition(startX, startY)
+{
+	batShape.setSize(sf::Vector2f(50,5));
+	batShape.setPosition(batPosition);
+}
+
+FloatRect Bat::getPosition()
+{
+	return batShape.getGlobalBounds();
+}
+
+RectangleShape Bat::getShape()
+{
+	return batShape;
+}
+
+void Bat::moveLeft()
+{
+	batMovingLeft = true;
+}
+void Bat::moveRight()
+{
+	batMovingRight = true;
+}
+void Bat::stopLeft()
+{
+	batMovingLeft = false;
+}
+void Bat::stopRight()
+{
+	batMovingRight = false;
+}
+void Bat::update(Time dt)
+{
+	if (batMovingLeft)
+	{
+		batPosition.x -= batSpeed * dt.asSeconds();
+	}
+	if (batMovingRight)
+	{
+		batPosition.x += batSpeed * dt.asSeconds();
+	}
+	batShape.setPosition(batPosition);
 }
