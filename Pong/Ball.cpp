@@ -1,7 +1,10 @@
-#include "Ball.h"
-Ball::Ball(float startX, startY) :ball_Position(startX,startY)
+
+#include"Ball.h"
+
+Ball::Ball(float startX, float startY) :ballPosition(startX,startY)
 {
-	ballShape.
+	ballShape.setSize(Vector2f(5,5));
+	ballShape.setPosition(ballPosition);
 }
 FloatRect Ball::getPosition()
 {
@@ -32,7 +35,7 @@ void Ball::ReboundBottom()
 {
 	ballPosition.y = 0;
 
-	ballPosition.x = 500;
+	ballPosition.x = 250;
 
 	ballDirY = -ballDirY;
 }
@@ -41,7 +44,7 @@ void Ball::update(Time dt)
 {
 	ballPosition.y += ballDirX * ballSpeed * dt.asSeconds();
 
-	ballPosition.x = ballDirX * ballSpeed * dt.asSeconds();
+	ballPosition.x += ballDirX * ballSpeed * dt.asSeconds();
 
 	ballShape.setPosition(ballPosition);
 }

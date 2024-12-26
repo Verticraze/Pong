@@ -1,7 +1,13 @@
 #include"Bat.h"
+
 #include"Ball.h"
+
 #include<SFML/Graphics.hpp>
+
 #include<sstream>
+
+
+
 int main()
 {
 	sf::RenderWindow window(VideoMode(720, 480), "Pong");
@@ -12,6 +18,7 @@ int main()
 
 	Bat bat(720 / 2, 480-20);
 
+	Ball ball(240, 0);
 
 	Text hud;
 
@@ -77,12 +84,44 @@ int main()
 
 			bat.update(dt);
 
-			
+			ball.update(dt);
 			
 			std::stringstream ss;
 			
 			ss << "Score:" << score << " Lives:"<<lives;
+
+			if (ball.getPosition().top > window.getSize().y)
 			
+			{
+				ball.ReboundBottom();
+
+				lives--;
+
+				if (lives < 1)
+				{
+					score = 0;
+
+					lives = 3;
+				}
+			}
+			if (ball.getPosition().top < 0)
+			
+			{
+				ball.ReboundBatOrTop();
+				
+				score++;
+			}
+			if (ball.getPosition().left<0 || ball.getPosition().left + ball.getPosition().width>window.getSize().x)
+			
+			{
+				ball.ReboundSides();
+			}
+
+			if (ball.getPosition().intersects(bat.getPosition()))
+			{
+				ball.ReboundBatOrTop();
+			}
+
 			hud.setString(ss.str());
 
 			window.clear();
@@ -91,7 +130,7 @@ int main()
 
 			window.draw(bat.getShape());
 
-
+			window.draw(ball.getShape());
 
 			window.display();
 	}

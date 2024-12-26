@@ -4,8 +4,10 @@ using namespace sf;
 
 class Ball {
 
-	Vector2f ballShape;
+	Vector2f ballPosition;
 	
+	RectangleShape ballShape;
+
 	float ballSpeed = 300.0f;
 	
 	float ballDirX = 0.2f;
