@@ -12,7 +12,6 @@ int main()
 
 	Bat bat(720 / 2, 480-20);
 
-	Ball ball(720 / 2, 0);
 
 	Text hud;
 
@@ -78,7 +77,7 @@ int main()
 
 			bat.update(dt);
 
-			ball.update(dt);
+			
 			
 			std::stringstream ss;
 			
@@ -92,7 +91,7 @@ int main()
 
 			window.draw(bat.getShape());
 
-			window.draw(ball.getShape());
+
 
 			window.display();
 	}

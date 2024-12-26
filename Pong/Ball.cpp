@@ -1,12 +1,8 @@
 #include "Ball.h"
-
-Ball::Ball(float startX, float startY) :ballPosition(startX, startY)
+Ball::Ball(float startX, startY) :ball_Position(startX,startY)
 {
-	ballShape.setSize(Vector2f(10,10));
-
-	ballShape.setPosition(ballPosition)
+	ballShape.
 }
-
 FloatRect Ball::getPosition()
 {
 	return ballShape.getGlobalBounds();

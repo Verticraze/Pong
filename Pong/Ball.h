@@ -1,12 +1,10 @@
 #pragma once
 #include<SFML/Graphics.hpp>
 using namespace sf;
-class Ball
-{
-public:
-	Vector2f ballPosition;
-	
-	RectangleShape ballShape;
+
+class Ball {
+
+	Vector2f ballShape;
 	
 	float ballSpeed = 300.0f;
 	
@@ -14,7 +12,8 @@ public:
 
 	float ballDirY = 0.2f;
 
-	
+public:
+
 	Ball(float startX, float startY);
 
 	FloatRect getPosition();

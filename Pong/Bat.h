@@ -8,7 +8,7 @@ class Bat {
 
 	RectangleShape batShape;
 	
-	float batSpeed=100.f;
+	float batSpeed=100.0f;
 	
 	bool batMovingRight=false;
 	
