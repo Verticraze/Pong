@@ -1,20 +1,33 @@
 #pragma once
 #include<SFML/Graphics.hpp>
+using namespace sf;
 class Ball
 {
-private:
-	sf::Vector2f ballPosition;
-	sf::RectangleShape ballshape;
-	float ballSpeed = 300.0f;
-	float ballDirX = 0.2f;
-	float ballDirY = 0.2f;
 public:
+	Vector2f ballPosition;
+	
+	RectangleShape ballShape;
+	
+	float ballSpeed = 300.0f;
+	
+	float ballDirX = 0.2f;
+
+	float ballDirY = 0.2f;
+
+	
 	Ball(float startX, float startY);
-	sf::FloatRect getPosition();
-	sf::RectangleShape getShape();
+
+	FloatRect getPosition();
+	
+	RectangleShape getShape();
+	
 	float getXVelocity();
+	
 	void ReboundSides();
+	
 	void ReboundBatOrTop();
+	
 	void ReboundBottom();
-	void update(sf::Time dt);
+	
+	void update(Time dt);
 };

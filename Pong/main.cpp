@@ -1,15 +1,18 @@
 #include"Bat.h"
+#include"Ball.h"
 #include<SFML/Graphics.hpp>
 #include<sstream>
 int main()
 {
-	sf:RenderWindow window(VideoMode(720, 480), "Pong");
+	sf::RenderWindow window(VideoMode(720, 480), "Pong");
 
 	int score = 0;
 
 	int lives = 0;
 
 	Bat bat(720 / 2, 480-20);
+
+	Ball ball(720 / 2, 0);
 
 	Text hud;
 
@@ -74,6 +77,8 @@ int main()
 			Time dt = clock.restart();
 
 			bat.update(dt);
+
+			ball.update(dt);
 			
 			std::stringstream ss;
 			
@@ -86,6 +91,8 @@ int main()
 			window.draw(hud);
 
 			window.draw(bat.getShape());
+
+			window.draw(ball.getShape());
 
 			window.display();
 	}
