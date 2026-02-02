@@ -12,12 +12,12 @@ Ball::Ball(float startX, float startY)
     ballShape.setPosition(position);
 }
 
-sf::FloatRect Ball::getPosition()
+FloatRect Ball::getPosition()
 {
     return ballShape.getGlobalBounds();
 }
  
-sf::RectangleShape Ball::getShape()
+RectangleShape Ball::getShape()
 {
     return ballShape;
 }

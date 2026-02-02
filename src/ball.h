@@ -1,13 +1,13 @@
 #pragma once
 #include <SFML/Graphics.hpp>
- 
+using namespace sf; 
 class Ball
 {
 	private:
 		Vector2f position;
  
 	 // A RectangleShape object called ref
-		sf::RectangleShape ballShape;
+		RectangleShape ballShape;
  
 		float xVelocity = .2f;
 		float yVelocity = .2f;
@@ -15,9 +15,9 @@ class Ball
 	public:
 		Ball(float startX, float startY);
  
-		sf::FloatRect getPosition();
+		FloatRect getPosition();
  
-		sf:: RectangleShape getShape();
+		RectangleShape getShape();
  
 		float getXVelocity();
  

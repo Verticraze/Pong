@@ -1,19 +1,22 @@
+#pragma once
+#include<SFML/Graphics.hpp>
+using namespace sf;
 class Bat
 {
 private:
     Vector2f position;
  
     // A RectangleShape object
-    sf::RectangleShape batShape;
+    RectangleShape batShape;
  
     float batSpeed = .3f;
  
 public:
     Bat(float startX, float startY);
  
-    sf::FloatRect getPosition();
+    FloatRect getPosition();
  
-    sf:: RectangleShape getShape();
+    RectangleShape getShape();
  
     void moveLeft();
  
