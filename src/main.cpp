@@ -7,32 +7,32 @@ using namespace sf;
 // This is where our game starts from
 int main()
 {
-    int windowWidth = 1024;
-    int windowHeight = 768;
-    // Make a window that is 1024 by 768 pixels
-    // And has the title "Pong"
-    RenderWindow window(VideoMode(windowWidth, windowHeight), "Pong");
+	int windowWidth = 1024;
+	int windowHeight = 768;
+	// Make a window that is 1024 by 768 pixels
+	// And has the title "Pong"
+	RenderWindow window(VideoMode(windowWidth, windowHeight), "Pong");
 
-    int score = 0;
-    int lives = 3;
+	int score = 0;
+	int lives = 3;
 
-    // create a bat
-    Bat bat (windowWidth / 2, windowHeight - 20);
+	// create a bat
+	Bat bat (windowWidth / 2, windowHeight - 20);
 
-    // create a ball
-    Ball ball(windowWidth / 2, 1);
+	// create a ball
+	Ball ball(windowWidth / 2, 1);
 
- // Create a "Text" object called "message". Weird but we will learn about objects soon
-Text hud;
+	 // Create a "Text" object called "message". Weird but we will learn about objects soon
+	Text hud;
 
- // Make it really big
- hud.setCharacterSize(75);
+	 // Make it really big
+	hud.setCharacterSize(75);
 
- // Choose a color
- hud.setFillColor(sf::Color::White);
+	 // Choose a color
+	hud.setFillColor(sf::Color::White);
      // This "while" loop goes round and round- perhaps forever
-while (window.isOpen())
-{
+	while (window.isOpen())
+	{
     /*
         Handle the player input
         *********************************************************************
@@ -127,7 +127,7 @@ hud.setString(ss.str());
         */
 
         // Clear everything from the last frame
-        window.clear(Color(26, 128, 182,255));
+        window.clear();
 
         window.draw(bat.getShape());
 
