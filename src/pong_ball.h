@@ -1,23 +1,23 @@
 #pragma once
 #include <SFML/Graphics.hpp>
-using namespace sf; 
-class Ball
+
+class pong_ball
 {
 	private:
-		Vector2f position;
+		sf::Vector2f position;
  
 	 // A RectangleShape object called ref
-		RectangleShape ballShape;
+		sf::RectangleShape ballShape;
  
 		float xVelocity = .2f;
 		float yVelocity = .2f;
  
 	public:
-		Ball(float startX, float startY);
+		pong_ball(float startX, float startY);
  
-		FloatRect getPosition();
+		sf::FloatRect getPosition();
  
-		RectangleShape getShape();
+		sf::RectangleShape getShape();
  
 		float getXVelocity();
  

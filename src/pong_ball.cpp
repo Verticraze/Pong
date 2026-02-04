@@ -1,9 +1,8 @@
 
-#include "ball.h"
-using namespace sf;
+#include "pong_ball.h"
  
 // This the constructor and it is called when we create an object
-Ball::Ball(float startX, float startY)
+pong_ball::pong_ball(float startX, float startY)
 {
     position.x = startX;
     position.y = startY;
@@ -12,40 +11,40 @@ Ball::Ball(float startX, float startY)
     ballShape.setPosition(position);
 }
 
-FloatRect Ball::getPosition()
+sf::FloatRect pong_ball::getPosition()
 {
     return ballShape.getGlobalBounds();
 }
  
-RectangleShape Ball::getShape()
+sf::RectangleShape pong_ball::getShape()
 {
     return ballShape;
 }
  
-float Ball::getXVelocity()
+float pong_ball::getXVelocity()
 {
     return xVelocity;
 }
  
-void Ball::reboundSides()
+void pong_ball::reboundSides()
 {
     xVelocity = -xVelocity;
 }
  
-void Ball::reboundBatOrTop()
+void pong_ball::reboundBatOrTop()
 {
     position.y -= (yVelocity * 30);
     yVelocity = -yVelocity;
  
 }
  
-void Ball::hitBottom()
+void pong_ball::hitBottom()
 {
     position.y = 1;
     position.x = 500;
 }
  
-void Ball::update()
+void pong_ball::update()
 {
     // Update the ball position variables
     position.y += yVelocity;

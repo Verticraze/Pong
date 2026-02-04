@@ -1,9 +1,9 @@
 
-#include "bat.h"
+#include "pong_bat.h"
 using namespace sf;
 
 // This the constructor and it is called when we create an object
-Bat::Bat(float startX, float startY)
+pong_bat::pong_bat(float startX, float startY)
 {
     position.x = startX;
     position.y = startY;
@@ -12,27 +12,27 @@ Bat::Bat(float startX, float startY)
     batShape.setPosition(position);
 }
 
-sf::FloatRect Bat::getPosition()
+sf::FloatRect pong_bat::getPosition()
 {
     return batShape.getGlobalBounds();
 }
  
-sf::RectangleShape Bat::getShape()
+sf::RectangleShape pong_bat::getShape()
 {
     return batShape;
 }
  
-void Bat::moveLeft()
+void pong_bat::moveLeft()
 {
     position.x -= batSpeed;
 }
  
-void Bat::moveRight()
+void pong_bat::moveRight()
 {
     position.x += batSpeed;
 }
  
-void Bat::update()
+void pong_bat::update()
 {
     batShape.setPosition(position);
 }
